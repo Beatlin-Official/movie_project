@@ -1,0 +1,70 @@
+@import "setting";
+@import url("https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap");
+
+body {
+  position: relative;
+  font-family: $mainFont;
+}
+main {
+  > .wrap {
+    @include wrap;
+    @include media(1440) {
+      width: auto;
+    }
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background: $mainColor;
+
+  .logo {
+    max-height: 45px;
+    img {
+      @include img100;
+    }
+  }
+
+  nav {
+    display: flex;
+  }
+}
+
+.imgList {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0 auto;
+  .ImgItem {
+    position: absolute;
+    height: auto;
+    transition: all 0.3s ease;
+    &:nth-child(1) {
+      z-index: 5;
+    }
+  }
+  .image-container {
+    position: relative;
+    width: 100%;
+    background-color: #f0f0f0;
+  }
+  img {
+    @include img100;
+  }
+  .placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+  }
+  .Txt {
+    position: absolute;
+    bottom: 0;
+    @include center(transform);
+  }
+}
